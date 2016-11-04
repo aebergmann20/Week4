@@ -29,17 +29,12 @@ window.getDeck = function() {
 $(function() {
   $(".deal").on("click", function() {
     event.preventDefault()
-    var c1 = getDeck();
-    var c2 = getDeck();
-    var c3 = getDeck();
-    var c4 = getDeck();
-    var c5 = getDeck();
-    $("#c1").attr("src", "http://golearntocode.com/images/cards/5_of_diamonds"+ c1 + ".png")
-    $("#c2").attr("src", "http://golearntocode.com/images/cards/5_of_diamonds"+ c2 + ".png")
-    $("#c3").attr("src", "http://golearntocode.com/images/cards/5_of_diamonds"+ c3 + ".png")
-    $("#c4").attr("src", "http://golearntocode.com/images/cards/5_of_diamonds"+ c4 + ".png")
-    $("#c5").attr("src", "http://golearntocode.com/images/cards/5_of_diamonds"+ c5 + ".png")
-    $(shuffle("c1", "c2", "c3", "c4", "c5"))
+    var deck = getDeck().shuffle()
+    $("#c1").attr("src", "http://golearntocode.com/images/cards/"+ deck[0] + ".png")
+    $("#c2").attr("src", "http://golearntocode.com/images/cards/"+ deck[1] + ".png")
+    $("#c3").attr("src", "http://golearntocode.com/images/cards/"+ deck[2] + ".png")
+    $("#c4").attr("src", "http://golearntocode.com/images/cards/"+ deck[3] + ".png")
+    $("#c5").attr("src", "http://golearntocode.com/images/cards/"+ deck[4] + ".png")
   })
 
 })
